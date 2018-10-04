@@ -1,6 +1,9 @@
 const express = require('express');
+const history = require('connect-history-api-fallback');
 
 const app = express();
+
+app.use(history({ index: '/index.html' }));
 
 app.get('/api/parts', (req, res) => res.send({
   heads: [
